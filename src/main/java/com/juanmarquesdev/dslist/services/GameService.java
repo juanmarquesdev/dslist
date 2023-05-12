@@ -30,4 +30,11 @@ public class GameService {
         /* We need the function get() to get the object */
         return new GameDTO(gameRepository.findById(id).get());
     }
+
+    @Transactional(readOnly = true)
+    public List<GameMinDTO> findByList(Long listId) {
+        /* stream() -> Make operations with data sequence */
+        /* map() -> Transform objects */
+        return gameRepository.searchByList(listId).stream().map(x -> new GameMinDTO(x)).toList();
+    }
 }
