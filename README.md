@@ -45,6 +45,20 @@ Esse projeto foi realizado seguindo um instensivão Java Spring lecionado por N�
 | Parâmetro   | Tipo       | Descrição                                   |
 | :---------- | :--------- | :------------------------------------------ |
 | `id`      | `int` | **Obrigatório**. O ID da lista que você quer |
+
+#### Muda os jogos de posição nas listas
+```http
+  POST /lists/${id}/replacement
+```
+### Exemplo de corpo da requisição
+Muda o jogo da posição 3 para a 1
+```json
+  {
+    "sourceIndex":3,
+    "destinationIndex":1 
+  }
+```
+
 ## Aprendizados
 
 - Conceitos
